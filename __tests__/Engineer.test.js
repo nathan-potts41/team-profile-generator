@@ -1,11 +1,21 @@
 const Engineer = require('../lib/Engineer');
 
-jest.mock('../lib/Engineer');
+// jest.mock('../lib/Engineer');
 
 test('creates an engineer object', () => {
-    const engineer = new Engineer('Jim');
-    expect(engineer.name).toBe('Jim');
-    expect(engineer.id).toEqual(expect.any(Number));
-    expect(engineer.email).toBe('jim.doe@gmail.com');
-    expect(engineer.github).toBe('minnesotaNyst')
-});
+    const engineer = new Engineer('Dick', 1234, 'biggreenmachine@gmail.com', 'nathanpotts41');
+
+    expect(engineer.github).toEqual(expect.any(String));
+})
+
+test('gets github username', () => {
+    const engineer = new Engineer('Dick', 1234, 'biggreenmachine@gmail.com', 'nathanpotts41');
+
+    expect(engineer.getGithub()).toEqual(expect.any(String))
+})
+
+test('gets role of engineer', () => {
+    const engineer = new Engineer('Dick', 1234, 'biggreenmachine@gmail.com', 'nathanpotts41');
+
+    expect(engineer.getRole()).toBe('Engineer');
+})
