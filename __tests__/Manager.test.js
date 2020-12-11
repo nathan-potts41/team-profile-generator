@@ -6,8 +6,8 @@ test('creates the property for github', () => {
     expect(manager.officeNumber).toEqual(expect.any(Number));
 });
 
-test('creates role of manager', () => {
-    const manager = new Manager(true)
+test('gets role of manager', () => {
+    const manager = new Manager('Manager')
 
-    expect(manager.getRole()).toBe(true);
+    expect(manager.getRole()).toBe('Manager');
 })
