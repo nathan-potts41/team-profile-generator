@@ -21,8 +21,8 @@ function appMenu() {
                     type: 'text',
                     name: 'managerName',
                     message: 'What is your name?',
-                    validate: nameInput => {
-                        if (nameInput) {
+                    validate: response => {
+                        if (response) {
                             return true;
                         } else {
                             console.log('Please enter your name!')
@@ -35,14 +35,13 @@ function appMenu() {
                     type: 'number',
                     name: 'managerId',
                     message: 'What is your ID number?',
-                    validate: idInput => {
-                        if (idInput) {
+
+                    // validation does not work, seek help!!!
+                    validate: response => {
+                        if (response) {
                             return true;
-                        } else if (NaN) {
-                            console.log('Please enter your ID number!')
-                            return false;
                         } else {
-                            console.log('Please enter your ID number!')
+                            console.log('Please enter your ID number!');
                             return false;
                         }
                     }
@@ -51,8 +50,9 @@ function appMenu() {
                     type: 'text',
                     name: 'managerEmail',
                     message: 'What is your email address?',
-                    validate: emailInput => {
-                        if (emailInput) {
+                    validate: response => {
+                        if (response) {
+
                             return true;
                         } else {
                             console.log('Please enter your email!');
@@ -60,8 +60,34 @@ function appMenu() {
                         }
                     }
                 },
+                {
+                    type: 'text',
+                    name: 'managerOffice',
+                    message: 'What is your office number?',
+                    validate: response => {
+                        if (response) {
 
-            ]);
+                            return true;
+                        } else {
+                            console.log('Please enter your office number!')
+                            return false;
+                        }
+                    }
+
+                }
+            ])
+            .then(answer => {
+                const manager = new Manager(
+                    answer.managerName,
+                    answer.managerId,
+                    answer.managerEmail,
+                    answer.managerOffice
+                );
+                teamMembers.push(manager);
+                idArray.push(answer.managerId);
+                console.log(manager);
+            });
+
     }
     createManager();
 };
