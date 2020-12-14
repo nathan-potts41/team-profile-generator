@@ -250,7 +250,7 @@ function appMenu() {
                     answer.internName,
                     answer.internId,
                     answer.internEmail,
-                    answer.internGithub
+                    answer.internSchool
                 );
                 teamMembers.push(intern);
                 idArray.push(answer.internId);
@@ -258,6 +258,9 @@ function appMenu() {
 
                 selectTeam();
             });
+    }
+    function buildTeam() {
+
     }
     createManager();
 };

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <title>Team Profile</title>
+</head>
+
+<body>
+
+    <nav class="nav-wrapper">
+      <a class="brand-logo center">Team Profile</a> 
+    </nav>
+
+    <div class="row">
+        <div class="col s6 m3">
+            <div class="card small hoverable">
+                <div class="card-title blue darken-3 center-align">
+                    <h3 class=" white-text">${this.name}</h3>
+                    <h4 class=" white-text computer">${this.getRole()}</h4>
+                </div>
+                <div class="card-content center-align">
+                    <div>ID: ${this.id}</div>
+                    <div>Email:<a href="${this.email}"> ${this.email}</a></div>
+                </div>
+                <!-- only engineers will have this section -->
+                <div class="card-action center-align">
+                    <a href="https://github.com/${this.github}" target="_blank">GitHub</a>
+                </div>
+                <!-- only engineers will have this section -->
+            </div>
+        </div>
+        <div class="col s6 m3">
+            <div class="card small hoverable">
+                <div class="card-title blue darken-3 center-align">
+                    <h3 class=" white-text">${this.name}</h3>
+                    <h4 class=" white-text computer">${this.getRole()}</h4>
+                </div>
+                <div class="card-content center-align">
+                    <div>ID: ${this.id}</div>
+                    <div>Email:<a href="${this.email}"> ${this.email}</a></div>
+                </div>
+                <!-- only engineers will have this section -->
+                <div class="card-action center-align">
+                    <a href="https://github.com/${this.github}" target="_blank">GitHub</a>
+                </div>
+                <!-- only engineers will have this section -->
+            </div>
+        </div>
+        <div class="col s6 m3">
+            <div class="card small hoverable">
+                <div class="card-title blue darken-3 center-align">
+                    <h3 class=" white-text">${this.name}</h3>
+                    <h4 class=" white-text computer">${this.getRole()}</h4>
+                </div>
+                <div class="card-content center-align">
+                    <div>ID: ${this.id}</div>
+                    <div>Email:<a href="${this.email}"> ${this.email}</a></div>
+                </div>
+                <!-- only engineers will have this section -->
+                <div class="card-action center-align">
+                    <a href="https://github.com/${this.github}" target="_blank">GitHub</a>
+                </div>
+                <!-- only engineers will have this section -->
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+
+</html>
