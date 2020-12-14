@@ -9,6 +9,7 @@ const fs = require("fs");
 const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/template-logic.js");
+const { formatWithOptions } = require('util');
 const teamMembers = [];
 const idArray = [];
 
@@ -260,8 +261,10 @@ function appMenu() {
             });
     }
     function buildTeam() {
-
-    }
+        fs.writeFile(outputPath, render, function (err) {
+            if (err) throw console.log(err);
+        })
+    };
     createManager();
 };
 
