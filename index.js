@@ -6,8 +6,8 @@ const Intern = require('./lib/Intern');
 
 const path = require("path");
 const fs = require("fs");
-const OUTPUT_DIR = path.resolve(__dirname, "output")
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+const OUTPUT_DIR = path.resolve(__dirname, "dist", 'team.html')
+//const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/template-logic.js");
 const { formatWithOptions } = require('util');
 const teamMembers = [];
@@ -63,7 +63,7 @@ function appMenu() {
                     name: 'managerOffice',
                     message: 'What is your office number?',
                     validate: response => {
-                        const valid = /^[1-9]\d*$/.test(response);
+                        const valid = /(?:[-\/\s.]|\d)+/.test(response);
                         if (valid) {
                             return true;
                         }
@@ -261,9 +261,9 @@ function appMenu() {
             });
     }
     function buildTeam() {
-        fs.writeFile(outputPath, render, function (err) {
-            if (err) throw console.log(err);
-        })
+        fs.writeFileSync(OUTPUT_DIR, render(teamMembers), 'utf-8', err => {
+            if (err) throw new Error(err);
+        });
     };
     createManager();
 };
