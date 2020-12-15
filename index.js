@@ -261,9 +261,7 @@ function appMenu() {
             });
     }
     function buildTeam() {
-        fs.writeFileSync(OUTPUT_DIR, render(teamMembers), 'utf-8', err => {
-            if (err) throw new Error(err);
-        });
+        fs.writeFileSync(OUTPUT_DIR, render(teamMembers), 'utf-8');
     };
     createManager();
 };
@@ -271,3 +269,4 @@ function appMenu() {
 
 
 appMenu();
+

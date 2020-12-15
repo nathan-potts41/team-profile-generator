@@ -1,4 +1,4 @@
-generatePageLayout = function () {
+const render = employees => {
     return `<!DOCTYPE html>
     <html lang="en">
     
@@ -16,9 +16,9 @@ generatePageLayout = function () {
         </nav>
     
         <div class="row">
-        ${manager.generateTemplateLiteral()}
-        ${engineer.generateTemplateLiteral()}
-        ${intern.generateTemplateLiteral()}
+        ${manager.generateManager()}
+        ${engineer.generateEngineer()}
+        ${intern.generateIntern()}
     
         </div>
     
@@ -29,4 +29,4 @@ generatePageLayout = function () {
 }
 
 
-module.exports = 'template-logic.js'
+module.exports = render
